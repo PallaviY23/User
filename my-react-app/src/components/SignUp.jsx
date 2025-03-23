@@ -38,14 +38,14 @@ export default function Signup() {
       {!showOtp ? (
         <div className="signup-box">
           <h2>Create New Account</h2>
-          <p className="text-muted">
+          <p className="signup-text-muted">
             Already Registered? <a href="#">Sign in</a>
           </p>
 
-          {error && <div className="alert alert-danger">{error}</div>}
+          {error && <div className="alert signup-alert-danger">{error}</div>}
 
           <form onSubmit={handleSubmit}>
-            <div className="form-group">
+            <div className="signup-form-group">
               <label>EMAIL</label>
               <input
                 type="email"
@@ -55,7 +55,7 @@ export default function Signup() {
               />
             </div>
 
-            <div className="form-group">
+            <div className="signup-form-group">
               <label>PASSWORD</label>
               <input
                 type="password"
@@ -65,7 +65,7 @@ export default function Signup() {
               />
             </div>
 
-            <div className="form-group">
+            <div className="signup-form-group">
               <label>CONFIRM PASSWORD</label>
               <input
                 type="password"
@@ -75,7 +75,7 @@ export default function Signup() {
               />
             </div>
 
-            <button className="btn-submit" type="submit">Send OTP</button>
+            <button className="signup-btn-submit" type="submit">Send OTP</button>
           </form>
         </div>
       ) : (
