@@ -51,9 +51,10 @@ function VehiclesList () {
   };
 
   return (
-    <div className="main">
+    <div className='body_vl'>
+    <div className="main_vl">
       <Filter onFilterChange={handleFilterChange} /> {/* Pass the handler to Filter */}
-      <div className="card-container">
+      <div className="card-container_vl">
         {filteredVehicles.map((vehicle, index) => (
           <Card
             key={index}
@@ -66,6 +67,7 @@ function VehiclesList () {
         ))}
       </div>
       
+    </div>
     </div>
   );
 }
