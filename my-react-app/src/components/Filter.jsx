@@ -7,8 +7,8 @@ function Filter({ onFilterChange }) {
   };
 
   return (
-    <div className="filter-container">
-      <label className="filter-option">
+    <div className="filter-container_vl">
+      <label className="filter-option_vl">
         <input
           type="radio"
           name="filter"
@@ -16,77 +16,77 @@ function Filter({ onFilterChange }) {
           defaultChecked
           onChange={handleFilterChange}
         />
-        <span className="circle"></span> All
+        <span className="circle_vl"></span> All
       </label>
 
-      <label className="filter-option">
+      <label className="filter-option_vl">
         <input
           type="radio"
           name="filter"
           value="Bikes"
           onChange={handleFilterChange}
         />
-        <span className="circle"></span> Bikes
+        <span className="circle_vl"></span> Bikes
       </label>
 
-      <label className="filter-option">
+      <label className="filter-option_vl">
         <input
           type="radio"
           name="filter"
           value="Price"
           onChange={handleFilterChange}
         />
-        <span className="circle"></span> Price
+        <span className="circle_vl"></span> Price
       </label>
 
-      <label className="filter-option">
+      <label className="filter-option_vl">
         <input
           type="radio"
           name="filter"
           value="Rating"
           onChange={handleFilterChange}
         />
-        <span className="circle"></span> Rating
+        <span className="circle_vl"></span> Rating
       </label>
 
-      <label className="filter-option">
+      <label className="filter-option_vl">
         <input
           type="radio"
           name="filter"
           value="Cars"
           onChange={handleFilterChange}
         />
-        <span className="circle"></span> Cars
+        <span className="circle_vl"></span> Cars
       </label>
 
-      <label className="filter-option">
+      <label className="filter-option_vl">
         <input
           type="radio"
           name="filter"
           value="Vans"
           onChange={handleFilterChange}
         />
-        <span className="circle"></span> Vans
+        <span className="circle_vl"></span> Vans
       </label>
 
-      <label className="filter-option">
+      <label className="filter-option_vl">
         <input
           type="radio"
           name="filter"
           value="Available"
           onChange={handleFilterChange}
         />
-        <span className="circle"></span> Available
+        <span className="circle_vl"></span> Available
       </label>
 
-      <label className="filter-option">
+      <label className="filter-option_vl">
         <input
           type="radio"
           name="filter"
           value="Not available"
           onChange={handleFilterChange}
         />
-        <span className="circle"></span> Not available
+        <span className="circle_vl"></span> Not available
       </label>
     </div>
   );
