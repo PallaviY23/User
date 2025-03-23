@@ -1,0 +1,133 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Full-screen container */
+  .body_past {
+    font-family: Arial, sans-serif;
+    background-color: #e1d3fa; /* Soft purple */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+  /* Tabs */
+  .tabs_past {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background: #e1d3fa;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .tab_past {
+    margin: 0 20px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    background-color: transparent;
+    border: 0;
+  }
+  
+  .tab_past:focus {
+    outline: none;
+  }
+  
+  .active_past {
+    font-weight: bold;
+    border-bottom: 3px solid #271944;
+    color: #271944;
+    border-radius: 0;
+    background-color: transparent;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+  
+  .active_past:focus {
+    outline: none;
+  }
+  
+  .active_past:hover {
+    border-bottom: 3px solid #271944;
+  }
+  
+  
+  /* Full-screen content */
+  .content_past {
+    flex-grow: 1;  /* Makes content take full available space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Booking Card */
+  .booking-card_past {
+    background: rgb(113, 85, 139);
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 750px;
+    color: white;
+  }
+  
+  .details_past {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .feedback_past {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .left_past h3,
+  .right_past h3 {
+    margin: 0;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .left_past p,
+  .right_past p {
+    margin: 5px 0;
+    color: white;
+  }
+  
+  .rental-company_past {
+    font-weight: bold;
+    color: white;
+  }
+  
+  .middle_past {
+    text-align: center;
+    font-weight: normal;
+  }
+  
+  .feedback-btn_past {
+    margin-top: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #AEB2B8;
+    color: #271944;
+    font-weight: bolder;
+    margin-left: 35px;
+  }
+  
+  .feedback-btn_past:hover {
+    background-color: #271944;
+    color: white;
+  }
+  
+  
