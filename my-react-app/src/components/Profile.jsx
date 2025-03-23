@@ -29,36 +29,37 @@ function Profile() {
   };
 
   return (
-    <div className="container">
+    <div className="profile-main-container">
     
     
     
       <div className="profile-container">
         <div className="profile-card">
-          <div className="avatar-container">
-            <img src={profilePic || "default-avatar.png"} alt="Profile" className="avatar" />
+          <div className="profile-avatar-container">
+            <img src={"./Profile.png"} alt="Profile" className="profile-avatar" />
           </div>
          
          
-          <div className="input-container">
-            <button className="edit-button-above" onClick={handleEditClick}>✏</button>
+          <div className="profile-input-container">
+            <button className="profile-edit-btn" onClick={handleEditClick}>✏</button>
+            </div>
             <h6>Full Name</h6>
             <input
               type="text"
               name="fullName"
               placeholder="Full Name"
-              className={`input-field ${isEditing ? "editing" : "disabled"}`}
+              className={`profile-input-field ${isEditing ? "editing" : "disabled"}`}
               value={formData.fullName}
               onChange={handleChange}
               disabled={!isEditing}
             />
-          </div>
+          
           <h6>Phone Number</h6>
           <input
             type="tel"
             name="phoneNumber"
             placeholder="Phone Number"
-            className={`input-field ${isEditing ? "editing" : "disabled"}`}
+            className={`profile-input-field ${isEditing ? "editing" : "disabled"}`}
             value={formData.phoneNumber}
             onChange={handleChange}
             disabled={!isEditing}
@@ -68,7 +69,7 @@ function Profile() {
             type="mail"
             name="email"
             placeholder="Email"
-            className={`input-field ${isEditing ? "editing" : "disabled"}`}
+            className={`profile-input-field ${isEditing ? "editing" : "disabled"}`}
             value={formData.email}
             onChange={handleChange}
             disabled={!isEditing}
@@ -77,7 +78,7 @@ function Profile() {
           <input
             type="date"
             name="dateOfBirth"
-            className={`input-field ${isEditing ? "editing" : "disabled"}`}
+            className={`profile-input-field ${isEditing ? "editing" : "disabled"}`}
             value={formData.dateOfBirth}
             onChange={handleChange}
             disabled={!isEditing}
@@ -87,13 +88,13 @@ function Profile() {
             type="text"
             name="address"
             placeholder="Address"
-            className={`input-field ${isEditing ? "editing" : "disabled"}`}
+            className={`profile-input-field ${isEditing ? "editing" : "disabled"}`}
             value={formData.address}
             onChange={handleChange}
             disabled={!isEditing}
           />
           {isEditing && (
-            <button className="save-button" onClick={handleSaveClick}>Save</button>
+            <button className="profile-save-button" onClick={handleSaveClick}>Save</button>
           )}
         </div>
       </div>

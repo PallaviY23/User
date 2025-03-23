@@ -5,7 +5,7 @@ const carData = [
       price: "3000INR/day",
       availability: "Yes",
       rating: "4.2/5",
-      image: "Images/kia-pecanto.png",
+      image: "./kia-pecanto.png",
     },
     {
       type: "Car",
@@ -13,7 +13,7 @@ const carData = [
       price: "2500INR/day",
       availability: "Yes",
       rating: "4.8/5",
-      image: "Images/Fiat-500.png",
+      image: "./Fiat-500.png",
     },
     {
       type: "Car",
@@ -21,7 +21,7 @@ const carData = [
       price: "2600INR/day",
       availability: "No",
       rating: "4.4/5",
-      image: "Images/peugeot-2008.png",
+      image: "./peugeot-2008.png",
     },
     {
       type: "Bike",
@@ -29,7 +29,7 @@ const carData = [
       price: "1900INR/day",
       availability: "Yes",
       rating: "4.1/5",
-      image: "Images/Avenger-150.png",
+      image: "./Avenger-150.png",
     },
     {
       type: "Car",
@@ -37,7 +37,7 @@ const carData = [
       price: "3400INR/day",
       availability: "Yes",
       rating: "4.0/5",
-      image: "Images/volkswagen-polo.png",
+      image: "./volkswagen-polo.png",
     },
     {
       type: "Car",
@@ -45,7 +45,7 @@ const carData = [
       price: "3600INR/day",
       availability: "Yes",
       rating: "3.8/5",
-      image: "Images/nissan-qashqai.png",
+      image: "./nissan-qashqai.png",
     },
   ];
   
