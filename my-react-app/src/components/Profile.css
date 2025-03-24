@@ -4,21 +4,24 @@
   flex-direction: column;
   background: #e1d3fa;
   align-items: center;
-  justify-content: center;
 }
 
 .profile-container {
   display: flex;
-  align-items: center;
   justify-content: center;
   width: 100%;
+  gap: 300px;
+  flex-direction: row;
+}
+.profile_BLogo_home{
+  margin-top: 200px;
 }
 
 .profile-card {
   background:#e1d3fa;
   padding: 20px;
   border-radius: 10px;
-  margin-top: 150px;
+  margin-top: 50px;
   text-align: center;
   width: 500px;
   position: relative;
@@ -44,7 +47,7 @@
   align-self: flex-end;
   margin-bottom: 5px;
   background: white;
-  border: 1px solid #ccc;
+  border: 2px solid black;
   border-radius: 50%;
   cursor: pointer;
   padding: 5px;

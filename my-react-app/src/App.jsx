@@ -16,6 +16,7 @@ function App() {
         <Route path='past' element={<Past />}></Route>
         <Route path='vehiclesList' element={<VehiclesList />}></Route>
         <Route path='profile' element={<Profile />}></Route>
+        
       </Routes>
     </>
   )

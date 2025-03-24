@@ -34,6 +34,9 @@ function Profile() {
     
     
       <div className="profile-container">
+        <div className="profile_BLogo_home">
+          <img src="/BLogo.jpg" alt="🚗 FLEET" />
+        </div>
         <div className="profile-card">
           <div className="profile-avatar-container">
             <img src={"./Profile.png"} alt="Profile" className="profile-avatar" />
@@ -41,7 +44,7 @@ function Profile() {
          
          
           <div className="profile-input-container">
-            <button className="profile-edit-btn" onClick={handleEditClick}>✏</button>
+            <button className="profile-edit-btn" onClick={handleEditClick}>✏️</button>
             </div>
             <h6>Full Name</h6>
             <input
