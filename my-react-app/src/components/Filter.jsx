@@ -1,93 +1,41 @@
-import "./VehiclesList.css";
-import React from "react";
+import "./AdminVehicle.css";
+import React, { useState } from "react";
 
 function Filter({ onFilterChange }) {
+  const [selectedFilter, setSelectedFilter] = useState("All");
+
   const handleFilterChange = (event) => {
-    onFilterChange(event.target.value); // Pass the selected value to the parent component
+    const selectedValue = event.target.value;
+    console.log("🔥 Filter Selected in Filter.js:", selectedValue);
+    setSelectedFilter(selectedValue);
+    onFilterChange(selectedValue); // ✅ Send filter to Admincarspage
   };
 
   return (
-    <div className="filter-container_vl">
-      <label className="filter-option_vl">
-        <input
-          type="radio"
-          name="filter"
-          value="All"
-          defaultChecked
-          onChange={handleFilterChange}
-        />
-        <span className="circle_vl"></span> All
-      </label>
-
-      <label className="filter-option_vl">
-        <input
-          type="radio"
-          name="filter"
-          value="Bikes"
-          onChange={handleFilterChange}
-        />
-        <span className="circle_vl"></span> Bikes
-      </label>
-
-      <label className="filter-option_vl">
-        <input
-          type="radio"
-          name="filter"
-          value="Price"
-          onChange={handleFilterChange}
-        />
-        <span className="circle_vl"></span> Price
-      </label>
-
-      <label className="filter-option_vl">
-        <input
-          type="radio"
-          name="filter"
-          value="Rating"
-          onChange={handleFilterChange}
-        />
-        <span className="circle_vl"></span> Rating
-      </label>
-
-      <label className="filter-option_vl">
-        <input
-          type="radio"
-          name="filter"
-          value="Cars"
-          onChange={handleFilterChange}
-        />
-        <span className="circle_vl"></span> Cars
-      </label>
-
-      <label className="filter-option_vl">
-        <input
-          type="radio"
-          name="filter"
-          value="Vans"
-          onChange={handleFilterChange}
-        />
-        <span className="circle_vl"></span> Vans
-      </label>
-
-      <label className="filter-option_vl">
-        <input
-          type="radio"
-          name="filter"
-          value="Available"
-          onChange={handleFilterChange}
-        />
-        <span className="circle_vl"></span> Available
-      </label>
-
-      <label className="filter-option_vl">
-        <input
-          type="radio"
-          name="filter"
-          value="Not available"
-          onChange={handleFilterChange}
-        />
-        <span className="circle_vl"></span> Not available
-      </label>
+    <div className="filter-container">
+      {[
+        "All",
+        "Cars",
+        "Bikes",
+        "Available",
+        "Not available",
+        "Price",
+        "Rating",
+      ].map((option) => (
+        <label key={option} className="filter-option">
+          <input
+            type="radio"
+            name="filter"
+            value={option}
+            checked={selectedFilter === option}
+            onChange={handleFilterChange}
+          />
+          <span
+            className={`circle ${selectedFilter === option ? "checked" : ""}`}
+          ></span>
+          {option}
+        </label>
+      ))}
     </div>
   );
 }
