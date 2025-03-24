@@ -90,7 +90,7 @@ export default function OTPVerification({ email }) {
       </div>
 
       {/* Verify OTP Button */}
-      <button className="btn-submit" onClick={verifyOtp}>
+      <button className="otp-btn-submit" onClick={verifyOtp}>
         Verify OTP
       </button>
 
