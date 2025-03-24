@@ -1,4 +1,4 @@
-import "./AdminVehicle.css";
+import "./Vehicle.css";
 import React, { useState } from "react";
 
 function Filter({ onFilterChange }) {
