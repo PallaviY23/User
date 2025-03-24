@@ -26,12 +26,12 @@
   }
   
   /* Subtext styling */
-  .text-muted {
+  .signup-text-muted{
     margin-bottom: 20px;
   }
   
   /* Error message styling */
-  .alert-danger {
+  .signup-alert-danger {
     color: #721c24;
     background-color: #f8d7da;
     border: 1px solid #f5c6cb;
@@ -42,12 +42,12 @@
   }
   
   /* Form group */
-  .form-group {
+  .signup-form-group {
     text-align: left;
     margin-right: 20px;
   }
   
-  .form-group label {
+  .signup-form-group label {
     font-weight: bold;
     display: block;
   
@@ -58,6 +58,7 @@
   input {
     width: 100%;
     padding: 10px;
+
     margin-bottom: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -67,7 +68,7 @@
   }
   
   /* Button styling */
-  .btn-submit {
+  .signup-btn-submit {
     background-color: #271944;
     color: #fff;
     padding: 11px;
@@ -79,7 +80,7 @@
     transition: background 0.3s ease;
   }
   
-  .btn-submit:hover {
+  .signup-btn-submit:hover {
     background-color: black;
     transform: scale(1.04);
   }
@@ -145,3 +146,22 @@
   .otp-resend:hover {
     text-decoration: underline;
   }
+  .otp-btn-submit {
+    background-color: #271944;
+    color: #fff;
+    padding: 11px;
+    margin-top: 25px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+  }
+
+  .otp-btn-submit:hover {
+    background-color: black;
+    transform: scale(1.04);
+
+  }
+/* hello pallavi fjhbfhdgfgy*/
