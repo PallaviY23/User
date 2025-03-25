@@ -12,7 +12,7 @@ function Filter({ onFilterChange }) {
   };
 
   return (
-    <div className="filter-container">
+    <div className="filter-container_v">
       {[
         "All",
         "Cars",
@@ -22,7 +22,7 @@ function Filter({ onFilterChange }) {
         "Price",
         "Rating",
       ].map((option) => (
-        <label key={option} className="filter-option">
+        <label key={option} className="filter-option_v">
           <input
             type="radio"
             name="filter"
@@ -31,7 +31,7 @@ function Filter({ onFilterChange }) {
             onChange={handleFilterChange}
           />
           <span
-            className={`circle ${selectedFilter === option ? "checked" : ""}`}
+            className={`circle_v ${selectedFilter === option ? "checked" : ""}`}
           ></span>
           {option}
         </label>

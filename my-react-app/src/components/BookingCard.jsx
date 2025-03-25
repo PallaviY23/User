@@ -1,7 +1,7 @@
 import React from "react";
 import "./Past.css";
 
-function BookingCard({ booking }) {
+function BookingCard({ booking, onRate }) {
   if (!booking || booking.booked || booking.bookingStatus !== "past") {
     return <h4>No past bookings yet</h4>;
   }
@@ -16,6 +16,7 @@ function BookingCard({ booking }) {
           <p>Start Date & Time: {booking.startDate} &nbsp; {booking.startTime}</p>
           <p>End Date & Time: {booking.endDate} &nbsp; {booking.endTime}</p>
           <p>Duration: {booking.duration}</p>
+          <p>Rating: {booking.rating ? "⭐".repeat(booking.rating) : "Not rated yet"}</p>
         </div>
 
         {/* Right Side */}
@@ -26,7 +27,7 @@ function BookingCard({ booking }) {
 
       {/* Rating Button */}
       <div className="rating_past">
-        <button className="rating-btn_past">Submit Rating</button>
+        <button className="rating-btn_past" onClick={onRate}>Submit Rating</button>
       </div>
     </div>
   );

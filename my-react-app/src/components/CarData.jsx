@@ -9,7 +9,8 @@ const carData = [
       booked: true, // 🚗 Is this car booked?
       bookingStatus: "active", // 🟢 "active", "past", or "none"
       startDate : "25-03-2025",
-      startTime : "17:25"
+      startTime : "17:25",
+      driverName : "Pallavi",
   },
   {
       type: "Car",
@@ -27,9 +28,9 @@ const carData = [
       price: "2600",
       availability: "No",
       rating: "4.4",
-      image: "Images/peugeot-2008.png",
+      image: "/peugeot-2008.png",
       booked: false,
-      bookingStatus: "none",
+      bookingStatus: "past",
   },
   {
       type: "Bike",
@@ -37,7 +38,7 @@ const carData = [
       price: "1900",
       availability: "Yes",
       rating: "4.1",
-      image: "Images/Avenger-150.png",
+      image: "/Avenger-150.png",
       booked: false,
       bookingStatus: "none",
   },
@@ -47,7 +48,7 @@ const carData = [
       price: "3400",
       availability: "Yes",
       rating: "4.0",
-      image: "Images/volkswagen-polo.png",
+      image: "/volkswagen-polo.png",
       booked: false,
       bookingStatus: "none",
   },
@@ -57,7 +58,7 @@ const carData = [
       price: "3600",
       availability: "Yes",
       rating: "3.8",
-      image: "Images/nissan-qashqai.png",
+      image: "/nissan-qashqai.png",
       booked: false,
       bookingStatus: "none",
   },

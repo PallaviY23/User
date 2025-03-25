@@ -97,9 +97,9 @@ function Admincarspage() {
       <Route
         path="/"
         element={
-          <div className="main">
+          <div className="main_v">
             <Filter onFilterChange={handleFilterChange} />
-            <div className="card-container">
+            <div className="card-container_v">
               {filteredVehicles.map((vehicle, index) => (
                 <VehicleCard
                   key={index}

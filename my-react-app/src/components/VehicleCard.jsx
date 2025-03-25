@@ -4,11 +4,11 @@ import {NavLink} from 'react-router-dom';
 
 function VehicleCard({ vehicle, onEdit, onDelete }) {
   return (
-    <div className="vehicle-card">
-      <div className="vehicle-image">
+    <div className="vehicle-card_v">
+      <div className="vehicle-image_v">
         <img src={vehicle.image} alt={vehicle.name} />
       </div>
-      <div className="vehicle-details">
+      <div className="vehicle-details_v">
         <h3>{vehicle.name}</h3>
         <p>Type: {vehicle.type}</p>
         <p>Price: ${vehicle.price}/day</p>
@@ -20,8 +20,8 @@ function VehicleCard({ vehicle, onEdit, onDelete }) {
         <p>Registration Plate: {vehicle.registrationPlate}</p>
         <p>Vehicle ID: {vehicle.vehicleId}</p>
       </div>
-      <div className="vehicle-actions">
-        <NavLink to='/tandc' className="book-btn">
+      <div className="vehicle-actions_v">
+        <NavLink to='/tandc' className="book-btn_vb">
           Book Now
         </NavLink>
       </div>
