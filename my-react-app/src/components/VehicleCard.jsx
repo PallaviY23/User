@@ -1,5 +1,6 @@
 import React from "react";
 import "./Vehicle.css";
+import {NavLink} from 'react-router-dom';
 
 function VehicleCard({ vehicle, onEdit, onDelete }) {
   return (
@@ -20,9 +21,9 @@ function VehicleCard({ vehicle, onEdit, onDelete }) {
         <p>Vehicle ID: {vehicle.vehicleId}</p>
       </div>
       <div className="vehicle-actions">
-        <button className="book-btn">
+        <NavLink to='/tandc' className="book-btn">
           Book Now
-        </button>
+        </NavLink>
       </div>
     </div>
   );

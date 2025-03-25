@@ -5,6 +5,10 @@ import Active from './components/Active';
 import Past from './components/Past';
 import Profile from './components/Profile';
 import Admincarspage from './components/VehicleMain';
+import TermsAndConditions from './components/TermsAndConditions';
+import Userpickup from "./components/userpickup";
+import Userpayment from "./components/userpayment";
+
 
 function App() {
   return (
@@ -16,6 +20,9 @@ function App() {
         <Route path='past' element={<Past />}></Route>
         <Route path='profile' element={<Profile />}></Route>
         <Route path='vehicles' element={<Admincarspage />}></Route>
+        <Route path='tandc' element={<TermsAndConditions />}></Route>
+        <Route path='userpickup' element={<Userpickup/>}></Route>
+        <Route path='userpayment' element={<Userpayment/>}></Route>
       </Routes>
     </>
   )
