@@ -86,7 +86,7 @@
     align-items: center;
   }
   
-  .feedback_past {
+  .rating_past {
     display: flex;
     justify-content: center;
   }
@@ -114,7 +114,7 @@
     font-weight: normal;
   }
   
-  .feedback-btn_past {
+  .rating-btn_past {
     margin-top: 10px;
     border: none;
     border-radius: 20px;
@@ -125,7 +125,7 @@
     margin-left: 35px;
   }
   
-  .feedback-btn_past:hover {
+  .rating-btn_past:hover {
     background-color: #271944;
     color: white;
   }

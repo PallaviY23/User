@@ -1,28 +1,37 @@
 import React from "react";
 import "./Active.css";
 
-function BookingCard() {
+function BookingCard1({ booking, updateBooking }) {
+  if (!booking || !booking.booked || booking.bookingStatus !== "active") {
+    return <h4>No car is booked yet</h4>;
+  }
+
+  const handleCancel = () => {
+    updateBooking(booking.name, false); // Update booking status to false
+  };
+
   return (
     <div className="booking-card_active">
       <div className="details_active">
-      <div className="left_active">
-        <h3>KTM RC 360</h3>
-        <p>31/01/2025 &nbsp; 11:00</p>
-        <p className="rental-company_active">SHREE SAI RENTALS</p>
-      </div>
+        
+        {/* Left Side */}
+        <div className="left_active">
+          <h3>{booking.name}</h3>
+          <p>{booking.startDate}</p>
+          <p>{booking.startTime}</p>
+        </div>
 
-      <div className="middle_active">
-        <p>3 days 3 hours</p>
-      </div>
+        {/* Right Side */}
+        <div className="right_active">
+          <img src={booking.image} alt={booking.name} className="vehicle-image" />
+        </div>
 
-      <div className="right_active">
-        <h3>Ram</h3>
-        <p>03/02/2025 &nbsp; 14:00</p>
-        <p>9000 INR</p>
       </div>
+      <div className="cancle_active">
+      <button className="cancel-btn" onClick={handleCancel}>Cancel</button>
       </div>
     </div>
   );
 }
 
-export default BookingCard;
+export default BookingCard1;
