@@ -12,7 +12,6 @@ function Past() {
   const [showPopup, setShowPopup] = useState(false);
   const [selectedBooking, setSelectedBooking] = useState(null);
   const [rating, setRating] = useState(0);
-  const [comment, setComment] = useState("");
 
   // Open popup when user clicks "Submit Rating"
   const handleOpenPopup = (booking) => {
@@ -25,7 +24,6 @@ function Past() {
     setShowPopup(false);
     setSelectedBooking(null);
     setRating(0);
-    setComment("");
   };
 
   // Submit rating and update car data
@@ -34,7 +32,7 @@ function Past() {
 
     const updatedBookings = pastBookings.map(car =>
       car.name === selectedBooking.name
-        ? { ...car, rating: rating, userComment: comment }
+        ? { ...car, rating: rating }
         : car
     );
 
@@ -42,8 +40,13 @@ function Past() {
     handleClosePopup();
   };
 
+  // Handle star rating click
+  const handleStarClick = (index) => {
+    setRating(index + 1);
+  };
+
   return (
-    <div className="app-container_past">
+    <div className={`app-container_past ${showPopup ? "overlay" : ""}`}>
       <div className="body_past">
 
         {/* Tabs */}
@@ -69,20 +72,21 @@ function Past() {
         {showPopup && (
           <div className="popup">
             <div className="popup-content">
-              <h3>Rate {selectedBooking?.name}</h3>
+              <h3 className="rateNow">Rate {selectedBooking?.name}</h3>
 
               {/* Star Rating */}
-              <label>Rating:</label>
-              <select value={rating} onChange={(e) => setRating(Number(e.target.value))}>
-                <option value={0}>Select</option>
-                <option value={1}>⭐</option>
-                <option value={2}>⭐⭐</option>
-                <option value={3}>⭐⭐⭐</option>
-                <option value={4}>⭐⭐⭐⭐</option>
-                <option value={5}>⭐⭐⭐⭐⭐</option>
-              </select>
+              <div className="star-rating">
+                {[...Array(5)].map((star, index) => (
+                  <span
+                    key={index}
+                    className={`star ${index < rating ? "filled" : ""}`}
+                    onClick={() => handleStarClick(index)}
+                  >
+                    &#9733;
+                  </span>
+                ))}
+              </div>
 
-              {/* Comment */}
               {/* Buttons */}
               <div className="popup-buttons">
                 <button onClick={handleSubmitRating}>Submit</button>
