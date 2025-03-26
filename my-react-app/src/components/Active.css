@@ -71,6 +71,7 @@
     width: 80%;
     max-width: 750px;
     color: white;
+    margin-bottom: 20px;
 }
 
 .details_active {
@@ -100,5 +101,15 @@
 .middle_active {
     text-align: center;
     font-weight: normal;
+}
+
+.cancle_active {
+    margin-left: 85%;
+}
+
+.cancel-btn {
+    background-color: red;
+    font-weight: bold;
+    border-radius: 20px;
 }
   

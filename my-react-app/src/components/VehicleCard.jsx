@@ -15,11 +15,11 @@ function VehicleCard({ vehicle, bookingType }) {
   };
 
   return (
-    <div className="vehicle-card">
-      <div className="vehicle-image">
+    <div className="vehicle-card_v">
+      <div className="vehicle-image_v">
         <img src={vehicle.image} alt={vehicle.name} />
       </div>
-      <div className="vehicle-details">
+      <div className="vehicle-details_v">
         <h3>{vehicle.name}</h3>
         <p>Type: {vehicle.type}</p>
         <p>Price: ${vehicle.price}/day</p>
@@ -33,6 +33,7 @@ function VehicleCard({ vehicle, bookingType }) {
       </div>
       <div className="vehicle-actions">
         <button onClick={handleBookNow} className="button_vehicles">
+      
           Book Now
         </button>
       </div>

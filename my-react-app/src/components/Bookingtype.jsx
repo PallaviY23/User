@@ -46,7 +46,7 @@ const Bookingtype = () => {
                 <p>"You have selected Pickup. Please visit our store to collect your vehicle."</p>
               </div>
             )}
-      <button onClick={handleConfirm} className="confirm-button">
+      <button onClick={handleConfirm} className="bookingtype_confirm-button">
         Confirm
       </button>
     </div>
