@@ -8,6 +8,7 @@ import Admincarspage from './components/VehicleMain';
 import TermsAndConditions from './components/TermsAndConditions';
 import Userpickup from "./components/userpickup";
 import Userpayment from "./components/userpayment";
+import Bookingtype from './components/Bookingtype';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='tandc' element={<TermsAndConditions />}></Route>
         <Route path='userpickup' element={<Userpickup/>}></Route>
         <Route path='userpayment' element={<Userpayment/>}></Route>
+        <Route path='bookingtype' element={<Bookingtype/>}></Route>
       </Routes>
     </>
   )

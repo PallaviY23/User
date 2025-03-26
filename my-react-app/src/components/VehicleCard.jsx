@@ -1,8 +1,19 @@
 import React from "react";
 import "./Vehicle.css";
-import {NavLink} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-function VehicleCard({ vehicle, onEdit, onDelete }) {
+function VehicleCard({ vehicle, bookingType }) {
+  const navigate = useNavigate();
+
+  const handleBookNow = () => {
+    
+    if (bookingType === 'own') {
+      navigate('/bookingtype', { state: { bookingType } });
+    } else {
+      navigate('/tandc', { state: { bookingType } });//pop up price
+    }
+  };
+
   return (
     <div className="vehicle-card">
       <div className="vehicle-image">
@@ -21,9 +32,9 @@ function VehicleCard({ vehicle, onEdit, onDelete }) {
         <p>Vehicle ID: {vehicle.vehicleId}</p>
       </div>
       <div className="vehicle-actions">
-        <NavLink to='/tandc' className="book-btn">
+        <button onClick={handleBookNow} className="button_vehicles">
           Book Now
-        </NavLink>
+        </button>
       </div>
     </div>
   );

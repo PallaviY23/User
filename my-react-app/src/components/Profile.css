@@ -85,7 +85,7 @@ h6{
 
 }
 .profile-input-field.disabled {
-  background-color:  rgb(113, 85, 139);
+  background-color:  #271944;
   color: gray;
   opacity: 1;
 }

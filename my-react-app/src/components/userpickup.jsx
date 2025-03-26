@@ -3,21 +3,35 @@ import "./userpickup.css";
 import Logo from "./fulllogo.jpg";
 import Map from "./map.jpg";
 import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 function Userpickup() {
-    return (
-      <div class="pickup_body">
-        <div class="pickup_logo-container">
-          <img src={Logo} class="pickup_logo-image" alt="Logo"/>
+  const location = useLocation();
+  const { bookingType, deliveryOption } = location.state || {};
+
+  const placeholderText = bookingType === 'own' && deliveryOption === 'Delivery'
+    ? 'Enter Delivery Address'
+    : 'Enter Pickup Location';
+
+  return (
+    <div className="pickup_body">
+      <div className="pickup_logo-container">
+        <img src={Logo} className="pickup_logo-image" alt="Logo" />
+      </div>
+      <div className="pickup_location">
+        <div className="pickup_location-1">
+          <img src={Map} alt="Map Logo" />
+          <input
+            type="text"
+            name="pickup"
+            placeholder={placeholderText}
+            className="pickup_input-field"
+          />
         </div>
-        <div class="pickup_location">
-          <div class="pickup_location-1">
-            <img src={Map} alt="Map Logo"/>
-            <span>Enter the pickup location</span>
-          </div>
-        </div>
-      <NavLink to='/userpayment' class="pickup_next-button">Next</NavLink>
+        <NavLink to='/userpayment' className="pickup_next-button">Next</NavLink>
+      </div>
     </div>
-    );
-  }
-  export default Userpickup;
+  );
+}
+
+export default Userpickup;
