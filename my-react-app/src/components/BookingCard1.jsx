@@ -17,8 +17,10 @@ function BookingCard1({ booking, updateBooking }) {
         {/* Left Side */}
         <div className="left_active">
           <h3>{booking.name}</h3>
-          <p>{booking.startDate}</p>
-          <p>{booking.startTime}</p>
+          <p>Start Date & Time: {booking.startDate} &nbsp; {booking.startTime}</p>
+          <p>End Date & Time: {booking.endDate} &nbsp; {booking.endTime}</p>
+          <p>Duration: {booking.duration}</p>
+          <p>Driver Name : {booking.driverName}</p>
         </div>
 
         {/* Right Side */}
