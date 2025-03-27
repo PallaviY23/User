@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Vehicle.css";
 import { useNavigate } from 'react-router-dom';
 
 function VehicleCard({ vehicle, bookingType }) {
   const navigate = useNavigate();
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleBookNow = () => {
-    
+    setShowPopup(true); // Show the popup when "Book Now" is clicked
+  };
+
+  const handleConfirm = () => {
+    setShowPopup(false); // Close the popup
     if (bookingType === 'own') {
       navigate('/bookingtype', { state: { bookingType } });
     } else {
-      navigate('/tandc', { state: { bookingType } });//pop up price
+      navigate('/tandc', { state: { bookingType } });
     }
+  };
+
+  const handleCancel = () => {
+    setShowPopup(false); // Close the popup
   };
 
   return (
@@ -33,10 +42,28 @@ function VehicleCard({ vehicle, bookingType }) {
       </div>
       <div className="vehicle-actions">
         <button onClick={handleBookNow} className="button_vehicles">
-      
           Book Now
         </button>
       </div>
+
+      {/* Popup */}
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <h3>Price Details</h3>
+            <p>Price per day: ${vehicle.price}</p>
+            <p>Total Price: ${vehicle.price * 1} (for 1 day)</p>
+            <div className="popup-actions">
+              <button onClick={handleConfirm} className="button_confirm">
+                Confirm
+              </button>
+              <button onClick={handleCancel} className="button_cancel">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
