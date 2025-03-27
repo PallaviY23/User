@@ -1,26 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./TermsAndConditions.css";
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const TermsAndConditions = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { bookingType, deliveryOption } = location.state || {};
+  const [showPopup, setShowPopup] = useState(false); // State to manage popup visibility
 
   const handleAgree = () => {
-    if (bookingType === 'own' && deliveryOption === 'Delivery') {
-      // Navigate to the delivery address page
-      navigate('/userpickup', { state: { bookingType, deliveryOption: 'Delivery' } });
-    } else if (bookingType === 'own' && deliveryOption === 'Pickup') {
-      // Navigate to the pickup address page
-      navigate('/userpickup', { state: { bookingType, deliveryOption: 'Pickup' } });
+    if (bookingType === "own" && deliveryOption === "Pickup") {
+      setShowPopup(true); // Show the booking confirmation popup
+    } else if (bookingType === "own" && deliveryOption === "Delivery") {
+      navigate("/userpickup", { state: { bookingType, deliveryOption: "Delivery" } });
     } else {
-      alert('Invalid booking type or delivery option.');
+      alert("Invalid booking type or delivery option.");
     }
   };
 
+  const handlePopupOk = () => {
+    setShowPopup(false); // Close the popup
+    navigate("/active"); // Redirect to the active bookings page
+  };
+
   return (
-    <body>
+    <div className="body_tc">
       <div className="container_tc">
         <h1 className="h1_tc">Terms and Conditions</h1>
         <section>
@@ -49,7 +53,20 @@ const TermsAndConditions = () => {
           </NavLink>
         </div>
       </div>
-    </body>
+
+      {/* Popup */}
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <h3>Booking Confirmed</h3>
+            <p>Your booking has been successfully confirmed!</p>
+            <button onClick={handlePopupOk} className="popup-ok-button">
+              OK
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 
