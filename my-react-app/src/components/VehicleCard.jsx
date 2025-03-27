@@ -12,7 +12,10 @@ function VehicleCard({ vehicle, bookingType }) {
 
   const handleConfirm = () => {
     setShowPopup(false); // Close the popup
-    if (bookingType === 'own') {
+    if (bookingType === 'driver') {
+      navigate('/userpickup', {state: { vehicle, bookingType } });
+    }
+    else if (bookingType === 'own') {
       navigate('/bookingtype', { state: { bookingType } });
     } else {
       navigate('/tandc', { state: { bookingType } });

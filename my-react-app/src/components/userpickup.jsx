@@ -1,17 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "./userpickup.css";
 import Logo from "./fulllogo.jpg";
 import Map from "./map.jpg";
-import { NavLink } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Userpickup() {
   const location = useLocation();
+  const navigate = useNavigate();
   const { bookingType, deliveryOption } = location.state || {};
+  const [showPopup, setShowPopup] = useState(false);
 
-  const placeholderText = bookingType === 'own' && deliveryOption === 'Delivery'
-    ? 'Enter Delivery Address'
-    : 'Enter Pickup Location';
+  const placeholderText =
+    bookingType === "own" && deliveryOption === "Delivery"
+      ? "Enter Delivery Address"
+      : "Enter Pickup Location";
+
+  const handleNext = () => {
+    setShowPopup(true); // Show the booking confirmation popup
+  };
+
+  const handlePopupOk = () => {
+    setShowPopup(false); // Close the popup
+    navigate("/active"); // Redirect to the active bookings page
+  };
 
   return (
     <div className="pickup_body">
@@ -28,8 +39,23 @@ function Userpickup() {
             className="pickup_input-field"
           />
         </div>
-        <NavLink to='/userpayment' className="pickup_next-button">Next</NavLink>
+        <button onClick={handleNext} className="pickup_next-button">
+          Next
+        </button>
       </div>
+
+      {/* Popup */}
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <h3>Booking Confirmed</h3>
+            <p>Your booking has been successfully confirmed!</p>
+            <button onClick={handlePopupOk} className="popup-ok-button">
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
