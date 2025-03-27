@@ -21,6 +21,8 @@ function BookingCard1({ booking, updateBooking }) {
           <p>End Date & Time: {booking.endDate} &nbsp; {booking.endTime}</p>
           <p>Duration: {booking.duration}</p>
           <p>Driver Name : {booking.driverName}</p>
+          <p>VehicleID : {booking.ID}</p>
+          <p>Price : {booking.price}</p>
         </div>
 
         {/* Right Side */}
