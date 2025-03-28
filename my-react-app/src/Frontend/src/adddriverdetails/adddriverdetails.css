@@ -39,12 +39,14 @@
   position: relative;
 }
 
-.form-group input {
+.form-group input,
+.form-group select {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 14px;
   transition: all 0.3s ease;
+  color: #000;
 }
 
 .form-group input:focus {
@@ -177,4 +179,18 @@ button[type="submit"]:active {
     max-width: 150px;
     max-height: 150px;
   }
+}
+
+/* Remove autofill background color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #c4c4c4 inset !important;
+    -webkit-text-fill-color: #000 !important;
+    transition: background-color 5000s ease-in-out 0s;
 }

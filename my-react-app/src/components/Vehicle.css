@@ -1,17 +1,9 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #e6daf0;
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    overflow-y: auto;
-  
-}
-
 .main_v {
     min-height: 100vh;
     padding-bottom: 2rem;
     overflow-y: auto;
+    background-color: #e6daf0;
+    font-family: Arial, sans-serif;
 }
 
 .filter-container_v {

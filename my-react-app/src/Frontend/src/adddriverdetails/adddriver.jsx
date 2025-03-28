@@ -82,18 +82,17 @@ const AddDriver = ({ onAddDriver, editingDriver }) => {
       license: formData.license,
       vehicleId: formData.vehicleId,
       driverId: formData.driverId,
-      image: formData.image
+      image: formData.image instanceof File 
         ? URL.createObjectURL(formData.image)
-        : editingDriver
-        ? editingDriver.image
-        : "Images/default-driver.png",
+        : formData.image || "Images/default-driver.png",
     };
 
     // Call the parent component's handler
-    onAddDriver(driverData);
-
-    // Navigate back to the drivers list
-    navigate("/admindriverpage");
+    if (typeof onAddDriver === 'function') {
+      onAddDriver(driverData);
+    } else {
+      console.error('onAddDriver is not a function');
+    }
   };
 
   return (

@@ -23,7 +23,7 @@ function Admincarspage() {
 
   const handleAddVehicle = () => {
     setEditingVehicle(null);
-    navigate("/admincarspage/add");
+    navigate("add");
   };
 
   const handleNewVehicle = (newVehicle) => {
@@ -44,11 +44,12 @@ function Admincarspage() {
         return updatedVehicles;
       });
     }
+    navigate("..");
   };
 
   const handleEditVehicle = (vehicle) => {
     setEditingVehicle(vehicle);
-    navigate("/admincarspage/add");
+    navigate("add");
   };
 
   const handleDeleteVehicle = (vehicle) => {
@@ -94,38 +95,40 @@ function Admincarspage() {
   }, [filter, vehicles]);
 
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <div className="main">
-            <Filter onFilterChange={handleFilterChange} />
-            <div className="card-container">
-              {filteredVehicles.map((vehicle, index) => (
-                <VehicleCard
-                  key={index}
-                  vehicle={vehicle}
-                  onEdit={handleEditVehicle}
-                  onDelete={handleDeleteVehicle}
-                />
-              ))}
-              <div className="card add-car-card" onClick={handleAddVehicle}>
-                <h2>+ Add Vehicle</h2>
+    <>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="main">
+              <Filter onFilterChange={handleFilterChange} />
+              <div className="card-container">
+                {filteredVehicles.map((vehicle, index) => (
+                  <VehicleCard
+                    key={index}
+                    vehicle={vehicle}
+                    onEdit={handleEditVehicle}
+                    onDelete={handleDeleteVehicle}
+                  />
+                ))}
+                <div className="card add-car-card" onClick={handleAddVehicle}>
+                  <h2>+ Add Vehicle</h2>
+                </div>
               </div>
             </div>
-          </div>
-        }
-      />
-      <Route
-        path="add"
-        element={
-          <AddCar
-            onAddVehicle={handleNewVehicle}
-            editingVehicle={editingVehicle}
-          />
-        }
-      />
-    </Routes>
+          }
+        />
+        <Route
+          path="add"
+          element={
+            <AddCar
+              onAddVehicle={handleNewVehicle}
+              editingVehicle={editingVehicle}
+            />
+          }
+        />
+      </Routes>
+    </>
   );
 }
 

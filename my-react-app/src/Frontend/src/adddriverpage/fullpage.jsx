@@ -5,7 +5,6 @@ import driversData from "./driversdata";
 import DriverCard from "./drivercard";
 import AddDriver from "../adddriverdetails/adddriver";
 
-
 function Admindriverpage() {
   const navigate = useNavigate();
   const [drivers, setDrivers] = useState(() => {
@@ -20,15 +19,15 @@ function Admindriverpage() {
 
   const handleAddDriver = () => {
     setEditingDriver(null);
-    navigate("/admindriverpage/adddriverpage");
+    navigate("/admin/drivers/add");
   };
 
-  const handleNewDriver = (newDriver) => {
+  const handleNewDriver = (driverData) => {
     if (editingDriver) {
       // Update existing driver
       setDrivers((prevDrivers) => {
         const updatedDrivers = prevDrivers.map((d) =>
-          d.driverId === editingDriver.driverId ? newDriver : d
+          d.driverId === editingDriver.driverId ? driverData : d
         );
         localStorage.setItem("drivers", JSON.stringify(updatedDrivers));
         return updatedDrivers;
@@ -36,17 +35,18 @@ function Admindriverpage() {
     } else {
       // Add new driver
       setDrivers((prevDrivers) => {
-        const updatedDrivers = [...prevDrivers, newDriver];
+        const updatedDrivers = [...prevDrivers, driverData];
         localStorage.setItem("drivers", JSON.stringify(updatedDrivers));
         return updatedDrivers;
       });
     }
     setEditingDriver(null);
+    navigate("/admin/drivers");
   };
 
   const handleEditDriver = (driver) => {
     setEditingDriver(driver);
-    navigate("/admindriverpage/adddriverpage");
+    navigate("/admin/drivers/add");
   };
 
   const handleDeleteDriver = (driver) => {
@@ -78,7 +78,7 @@ function Admindriverpage() {
         }
       />
       <Route
-        path="/adddriverpage"
+        path="add"
         element={
           <AddDriver
             onAddDriver={handleNewDriver}

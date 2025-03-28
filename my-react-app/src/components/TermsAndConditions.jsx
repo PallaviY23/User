@@ -12,7 +12,7 @@ const TermsAndConditions = () => {
             <p className="p_tc">By using the Fleet platform, the customer agrees to abide by all terms and conditions stated here.</p>
             <ul className="ul_tc">
             <li className="li_tc">The customer must be at least 18 years old (or the legal driving age in their region) to rent a vehicle.</li>
-            <li>A valid government-issued ID and driver’s license must be provided for verification.</li>
+            <li>A valid government-issued ID and driver's license must be provided for verification.</li>
             </ul>
         </section>
         
@@ -34,55 +34,56 @@ const TermsAndConditions = () => {
         </section>
         
         <section>
-            <h2 className="h2_tc">4. Payment and Refund Policy</h2>
+            <h2 className="h2_tc">4. Payment Terms</h2>
             <ul className="ul_tc">
-            <li className="li_tc">Payments must be made through the secure payment gateway provided on the platform.</li>
-            <li className="li_tc">A cancellation fee may be applied if the booking is canceled within a specified time.</li>
-            <li className="li_tc">Refunds (if applicable) will be processed within 7-10 business days.</li>
+            <li className="li_tc">All payments must be made in advance or as per the agreed payment schedule.</li>
+            <li className="li_tc">Refunds are subject to the platform's refund policy and may take 5-7 business days to process.</li>
+            <li className="li_tc">Additional charges for damages or violations will be billed separately.</li>
             </ul>
         </section>
         
         <section>
             <h2 className="h2_tc">5. License and Documentation</h2>
             <ul className="ul_tc">
-            <li className="li_tc">Customers must possess a valid driver’s license when renting a vehicle without a driver.</li>
+            <li className="li_tc">Customers must possess a valid driver's license when renting a vehicle without a driver.</li>
             <li className="li_tc">The platform and vehicle owners reserve the right to verify all documents before allowing rentals.</li>
             <li className="li_tc">If the customer is found driving without a valid license, the booking may be immediately canceled without a refund.</li>
             </ul>
         </section>
         
         <section>
-            <h2 className="h2_tc">6. Vehicle Usage and Responsibilities</h2>
+            <h2 className="h2_tc">6. Insurance and Liability</h2>
             <ul className="ul_tc">
-            <li className="li_tc">Customers are responsible for the vehicle during the rental period.</li>
-            <li className="li_tc">Any damage, theft, or loss of the vehicle must be reported immediately, and the renter may be liable for repair costs.</li>
-            <li className="li_tc">Vehicles must be returned in the same condition as received, with the agreed-upon fuel level.</li>
+            <li className="li_tc">Basic insurance is included in the rental price, but customers may opt for additional coverage.</li>
+            <li className="li_tc">Customers are liable for any damages beyond the insurance coverage.</li>
+            <li className="li_tc">The platform is not responsible for personal belongings left in the vehicle.</li>
             </ul>
         </section>
         
         <section>
-            <h2 className="h2_tc">7. Insurance and Liability</h2>
+            <h2 className="h2_tc">7. Vehicle Condition and Maintenance</h2>
             <ul className="ul_tc">
-            <li className="li_tc">The customer must ensure the rented vehicle has valid insurance.</li>
-            <li className="li_tc">The platform is not responsible for any accidents, fines, or legal violations committed by the customer while using the rented vehicle.</li>
-            <li className="li_tc">In case of an accident, the renter must follow the insurance claim process outlined by the vehicle owner.</li>
+            <li className="li_tc">Vehicles are maintained according to standard safety protocols.</li>
+            <li className="li_tc">Customers must report any issues or damages immediately upon discovery.</li>
+            <li className="li_tc">Regular maintenance is the responsibility of the vehicle owner.</li>
             </ul>
         </section>
         
         <section>
-            <h2 className="h2_tc">8. Prohibited Uses</h2>
+            <h2 className="h2_tc">8. Cancellation Policy</h2>
             <ul className="ul_tc">
-            <li className="li_tc">Vehicles must not be used for illegal activities, racing, towing, or sub-renting.</li>
-            <li className="li_tc">Customers cannot drive under the influence of alcohol or drugs.</li>
-            <li className="li_tc">Any violation may lead to legal consequences and permanent account suspension.</li>
+            <li className="li_tc">Cancellations made 24 hours before pickup are eligible for a full refund.</li>
+            <li className="li_tc">Late cancellations may incur a cancellation fee.</li>
+            <li className="li_tc">No-shows will be charged the full rental amount.</li>
             </ul>
         </section>
         
         <section>
             <h2 className="h2_tc">9. Privacy and Data Protection</h2>
             <ul className="ul_tc">
-            <li className="li_tc">Personal information provided during registration and transactions will be stored securely and used only for service purposes.</li>
-            <li className="li_tc">The platform complies with data protection laws to ensure user privacy.</li>
+            <li className="li_tc">Customer data is protected according to privacy laws and regulations.</li>
+            <li className="li_tc">Personal information is only used for booking and verification purposes.</li>
+            <li className="li_tc">Customers can request their data to be deleted at any time.</li>
             </ul>
         </section>
         
@@ -95,8 +96,8 @@ const TermsAndConditions = () => {
         </section>
         
         <div className="button-container_tc">
-            <NavLink to='/userpickup' className="agree-button_tc">I Agree</NavLink>
-            <NavLink to='/vehicles' className="cancel-button_tc">Cancel</NavLink>
+            <NavLink to='/home/userpickup' className="agree-button_tc">I Agree</NavLink>
+            <NavLink to='/home/vehicles' className="cancel-button_tc">Cancel</NavLink>
         </div>
         </div>
     </body>

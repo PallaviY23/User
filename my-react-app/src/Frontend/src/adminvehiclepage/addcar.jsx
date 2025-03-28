@@ -69,7 +69,7 @@ function AddCar({ onAddVehicle, editingVehicle }) {
       driverName: formData.driverName,
     };
     onAddVehicle(cardData);
-    navigate("/admincarspage");
+    navigate("/admin/vehicles");
   };
 
   return (

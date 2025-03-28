@@ -21,7 +21,7 @@ function VehicleCard({ vehicle, onEdit, onDelete }) {
         <p>Vehicle ID: {vehicle.vehicleId}</p>
       </div>
       <div className="vehicle-actions_v">
-        <NavLink to='/tandc' className="book-btn_vb">
+        <NavLink to='/home/tandc' state={{ from: '/home/vehicles' }} className="book-btn_vb">
           Book Now
         </NavLink>
       </div>

@@ -43,7 +43,7 @@ function Home() {
           <label className="radio-option2_home"><input type="radio" name="drive" value="own" /> Own Driving</label>
         </div>
         
-        <NavLink to='/vehicles' className="button_home">Search Results</NavLink>
+        <NavLink to='/home/vehicles' className="button_home">Search Results</NavLink>
       </div>
     </div>
     </div>

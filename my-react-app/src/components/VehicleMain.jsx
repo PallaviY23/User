@@ -1,64 +1,22 @@
 import "./Vehicle.css";
 import React, { useState, useEffect } from "react";
-import { useNavigate, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Filter from "./Filter";
 import VehicleCard from "./VehicleCard";
 import carData from "./CarData";
 
-function Admincarspage() {
-  const navigate = useNavigate();
+function Usercarspage() {
   const [vehicles, setVehicles] = useState(() => {
     const savedVehicles = localStorage.getItem("vehicles");
     return savedVehicles ? JSON.parse(savedVehicles) : carData;
   });
   const [filteredVehicles, setFilteredVehicles] = useState(vehicles);
   const [filter, setFilter] = useState("All");
-  const [editingVehicle, setEditingVehicle] = useState(null);
 
   // Save vehicles to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem("vehicles", JSON.stringify(vehicles));
   }, [vehicles]);
-
-  const handleAddVehicle = () => {
-    setEditingVehicle(null);
-    navigate("/admincarspage/add");
-  };
-
-  const handleNewVehicle = (newVehicle) => {
-    if (editingVehicle) {
-      // Update existing vehicle
-      setVehicles((prevVehicles) => {
-        const updatedVehicles = prevVehicles.map((v) =>
-          v === editingVehicle ? newVehicle : v
-        );
-        localStorage.setItem("vehicles", JSON.stringify(updatedVehicles));
-        return updatedVehicles;
-      });
-    } else {
-      // Add new vehicle
-      setVehicles((prevVehicles) => {
-        const updatedVehicles = [...prevVehicles, newVehicle];
-        localStorage.setItem("vehicles", JSON.stringify(updatedVehicles));
-        return updatedVehicles;
-      });
-    }
-  };
-
-  const handleEditVehicle = (vehicle) => {
-    setEditingVehicle(vehicle);
-    navigate("/admincarspage/add");
-  };
-
-  const handleDeleteVehicle = (vehicle) => {
-    if (window.confirm("Are you sure you want to delete this vehicle?")) {
-      setVehicles((prevVehicles) => {
-        const updatedVehicles = prevVehicles.filter((v) => v !== vehicle);
-        localStorage.setItem("vehicles", JSON.stringify(updatedVehicles));
-        return updatedVehicles;
-      });
-    }
-  };
 
   // Function to update filter state
   const handleFilterChange = (selectedFilter) => {
@@ -114,4 +72,4 @@ function Admincarspage() {
   );
 }
 
-export default Admincarspage;
+export default Usercarspage;
