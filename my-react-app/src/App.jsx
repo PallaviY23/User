@@ -8,6 +8,7 @@ import Usercarspage from './components/VehicleMain';
 import TermsAndConditions from './components/TermsAndConditions';
 import Userpickup from "./components/userpickup";
 import Userpayment from "./components/userpayment";
+
 import Nav from './Frontend/src/navbar/nav.jsx';
 import Mainbody from './Frontend/src/adminhome/mainbody.jsx';
 import Adminbookingspage from './Frontend/src/adminbookings/adminbookings.jsx';
@@ -20,6 +21,8 @@ import Adminsignin from './signupandsignin/src/Adminsignin.jsx';
 import './Frontend/src/AdminLayout.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import './signupandsignin/src/App.css';
+=======
+import Bookingtype from './components/Bookingtype';
 
 // User Layout Component
 const UserLayout = () => {
@@ -27,6 +30,7 @@ const UserLayout = () => {
     <>
       <NavBar isAdmin={false} />
       <Routes>
+
         <Route path='/' element={<Home />} />
         <Route path='help' element={<Home />} />
         <Route path='active' element={<Active />} />
@@ -36,6 +40,17 @@ const UserLayout = () => {
         <Route path='userpickup' element={<Userpickup />} />
         <Route path='userpayment' element={<Userpayment />} />
         <Route path='vehicles' element={<Usercarspage />} />
+=======
+        <Route path='/' element={<Home />}></Route>
+        <Route path='active' element={<Active />}></Route>
+        <Route path='past' element={<Past />}></Route>
+        <Route path='profile' element={<Profile />}></Route>
+        <Route path='vehicles' element={<Admincarspage />}></Route>
+        <Route path='tandc' element={<TermsAndConditions />}></Route>
+        <Route path='userpickup' element={<Userpickup/>}></Route>
+        <Route path='userpayment' element={<Userpayment/>}></Route>
+        <Route path='bookingtype' element={<Bookingtype/>}></Route>
+
       </Routes>
     </>
   );

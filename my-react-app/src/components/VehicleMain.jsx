@@ -1,11 +1,33 @@
 import "./Vehicle.css";
 import React, { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+
+
+
+import { useNavigate, useLocation, Routes, Route } from "react-router-dom";
+
 import Filter from "./Filter";
 import VehicleCard from "./VehicleCard";
 import carData from "./CarData";
 
+
 function Usercarspage() {
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [bookingType, setBookingType] = useState(() => {
+    // Retrieve the bookingType from location state or localStorage
+    return location.state?.bookingType || localStorage.getItem('bookingType') || 'driver';
+  });
+
+  useEffect(() => {
+    // Store the bookingType in localStorage whenever it changes
+    if (bookingType) {
+      localStorage.setItem('bookingType', bookingType);
+    }
+  }, [bookingType]);
+
+
+
   const [vehicles, setVehicles] = useState(() => {
     const savedVehicles = localStorage.getItem("vehicles");
     return savedVehicles ? JSON.parse(savedVehicles) : carData;
@@ -62,6 +84,7 @@ function Usercarspage() {
                 <VehicleCard
                   key={index}
                   vehicle={vehicle}
+                  bookingType={bookingType} // Pass bookingType to VehicleCard
                 />
               ))}
             </div>
@@ -71,5 +94,6 @@ function Usercarspage() {
     </Routes>
   );
 }
+
 
 export default Usercarspage;
