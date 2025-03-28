@@ -55,7 +55,11 @@ function Userpickup() {
             </button>
           </div>
         </div>
+
+      <NavLink to='/home/userpayment' class="pickup_next-button">Next</NavLink>
+=======
       )}
+
     </div>
   );
 }

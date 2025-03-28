@@ -43,8 +43,13 @@ function VehicleCard({ vehicle, bookingType }) {
         <p>Registration Plate: {vehicle.registrationPlate}</p>
         <p>Vehicle ID: {vehicle.vehicleId}</p>
       </div>
+
+      <div className="vehicle-actions_v">
+        <NavLink to='/home/tandc' state={{ from: '/home/vehicles' }} className="book-btn_vb">
+=======
       <div className="vehicle-actions">
         <button onClick={handleBookNow} className="button_vehicles">
+
           Book Now
         </button>
       </div>

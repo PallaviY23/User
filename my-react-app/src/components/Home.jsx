@@ -89,6 +89,10 @@ function Home() {
             </NavLink>
           </div>
         </div>
+
+        
+        <NavLink to='/home/vehicles' className="button_home">Search Results</NavLink>
+
       </div>
     </>
   );

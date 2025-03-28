@@ -14,8 +14,8 @@ function Active() {
 
         {/* Tabs */}
         <div className="tabs_active">
-          <NavLink to='/active' className="active_active">Active</NavLink>
-          <NavLink to='/past' className="past_active">Past journey</NavLink>
+          <NavLink to='/home/active' className="active_active">Active</NavLink>
+          <NavLink to='/home/past' className="past_active">Past journey</NavLink>
         </div>
 
         {/* Show active bookings */}
